@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KS Visual | Photography Portfolio</title>
+    <meta name="description" content="Professional photography portfolio showcasing landscapes, wildlife, travel, and street photography">
+    
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="assets/icon.png" type="image/png">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="preload" href="assets/images/hero/featured-1.jpg" as="image">
+    <link rel="preload" href="assets/images/hero/featured-2.jpg" as="image">
+    <link rel="preload" href="assets/images/hero/featured-3.jpg" as="image">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="light-theme">
+    <header class="header" id="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="logo">
+                    <span class="logo-text">KS Visual</span>
+                </a>
+                
+                <ul class="nav-menu" id="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link active">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="gallery.html" class="nav-link">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+                
+                <div class="nav-actions">
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="hero" id="hero">
+        <div class="hero-slideshow">
+            <div class="hero-slide active">
+                <div class="hero-image" style="background-image: url('assets/images/hero/featured-1.jpg')"></div>
+                <div class="hero-content">
+                    <h1 class="hero-title">Capturing the World Through My Lens</h1>
+                    <p class="hero-subtitle">Landscape • Wildlife • Travel • Street Photography</p>
+                    <div class="hero-actions">
+                        <a href="gallery.html" class="btn btn-primary">View Gallery</a>
+                        <a href="about.html" class="btn btn-secondary">My Story</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-slide">
+                <div class="hero-image" style="background-image: url('assets/images/hero/featured-2.jpg')"></div>
+                <div class="hero-content">
+                    <h1 class="hero-title">Nature's Untold Stories</h1>
+                    <p class="hero-subtitle">Wildlife & Landscape Photography Adventures</p>
+                    <div class="hero-actions">
+                        <a href="gallery.html?category=wildlife" class="btn btn-primary">Wildlife Gallery</a>
+                        <a href="gallery.html?category=landscapes" class="btn btn-secondary">Landscapes</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-slide">
+                <div class="hero-image" style="background-image: url('assets/images/hero/featured-3.jpg')"></div>
+                <div class="hero-content">
+                    <h1 class="hero-title">Urban Explorations</h1>
+                    <p class="hero-subtitle">Street & Travel Photography from Around the World</p>
+                    <div class="hero-actions">
+                        <a href="gallery.html?category=street" class="btn btn-primary">Street Gallery</a>
+                        <a href="gallery.html?category=travel" class="btn btn-secondary">Travel Photos</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-slideshow-controls">
+                <button class="slide-prev" aria-label="Previous slide">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                
+                <div class="slide-indicators">
+                    <button class="slide-indicator active" aria-label="Go to slide 1"></button>
+                    <button class="slide-indicator" aria-label="Go to slide 2"></button>
+                    <button class="slide-indicator" aria-label="Go to slide 3"></button>
+                </div>
+                
+                <button class="slide-next" aria-label="Next slide">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div class="hero-scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <section class="featured-gallery section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Work</h2>
+                <p class="section-subtitle">A curated selection of my favorite captures</p>
+            </div>
+            
+            <div class="gallery-grid masonry-view" id="featured-gallery"></div>
+            
+            <div class="section-footer">
+                <a href="gallery.html" class="btn btn-outline">View Full Gallery</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-preview section-padding">
+        <div class="container">
+            <div class="about-preview-content">
+                <div class="about-text">
+                    <h2 class="section-title">Behind the Lens</h2>
+                    <p class="about-description">
+                        I'm a passionate photographer with a keen eye for detail and a love for storytelling through imagery. 
+                        Whether it's the raw beauty of landscapes, the untamed spirit of wildlife, the vibrant pulse of street life, 
+                        or the wonder of travel, my work aims to evoke emotion and spark curiosity.
+                    </p>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-number">8+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">Projects Completed</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Countries Visited</span>
+                        </div>
+                    </div>
+                    <a href="about.html" class="btn btn-primary">Learn More About Me</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="categories section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Explore by Category</h2>
+                <p class="section-subtitle">Discover different perspectives through my lens</p>
+            </div>
+            
+            <div class="categories-grid">
+                <a href="gallery.html?category=landscapes" class="category-card">
+                    <div class="category-image" style="background-image: url('assets/images/placeholders/landscapes.jpg')">
+                        <div class="category-overlay">
+                            <h3 class="category-title">Landscapes</h3>
+                            <span class="category-count">20 Photos</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="gallery.html?category=wildlife" class="category-card">
+                    <div class="category-image" style="background-image: url('assets/images/placeholders/wildlife.jpg')">
+                        <div class="category-overlay">
+                            <h3 class="category-title">Wildlife</h3>
+                            <span class="category-count">20 Photos</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="gallery.html?category=travel" class="category-card">
+                    <div class="category-image" style="background-image: url('assets/images/placeholders/travel.jpg')">
+                        <div class="category-overlay">
+                            <h3 class="category-title">Travel</h3>
+                            <span class="category-count">20 Photos</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="gallery.html?category=street" class="category-card">
+                    <div class="category-image" style="background-image: url('assets/images/placeholders/street.jpg')">
+                        <div class="category-overlay">
+                            <h3 class="category-title">Street</h3>
+                            <span class="category-count">20 Photos</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">KS Visual</h3>
+                    <p class="footer-description">
+                        Capturing moments that tell stories and evoke emotions through professional photography.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://x.com/KsTiana1" class="social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="404.html" class="social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://m.facebook.com/profile.php?id=61582375997402" class="social-link" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="404.html" class="social-link" aria-label="Pinterest">
+                            <i class="fab fa-pinterest"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="gallery.html?category=landscapes">Landscapes</a></li>
+                        <li><a href="gallery.html?category=wildlife">Wildlife</a></li>
+                        <li><a href="gallery.html?category=travel">Travel</a></li>
+                        <li><a href="gallery.html?category=street">Street</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Contact Info</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-envelope"></i> <a href="mailto:kstiana1@gmail.com">kstiana1@gmail.com</a></p>
+                        <p><i class="fas fa-phone"></i> <a href="tel:+2348164845541">+234 816 484 5541</a></p>
+                        <p><i class="fas fa-map-marker-alt"></i> Nigeria</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 KS Visual. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <div class="loading-spinner" id="loading-spinner">
+        <div class="spinner"></div>
+    </div>
+
+    <script src="js/lib/_driver.js"></script>
+    <script src="js/modules/utils/_debounce.js"></script>
+    <script src="js/modules/utils/_storage.js"></script>
+    <script src="js/modules/utils/_errorHandler.js"></script>
+    <script src="js/modules/utils/_lazyLoad.js"></script>
+    <script src="js/modules/ui/_darkMode.js"></script>
+    <script src="js/modules/ui/_mobileMenu.js"></script>
+    <script src="js/modules/ui/_backToTop.js"></script>
+    <script src="js/modules/ui/_scrollAnimations.js"></script>
+    <script src="js/modules/ui/_parallax.js"></script>
+    <script src="js/modules/ui/_heroSlideshow.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

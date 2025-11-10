@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | KS Visual Photography Portfolio</title>
+    <meta name="description" content="Explore my photography gallery featuring landscapes, wildlife, travel, and street photography">
+    
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="assets/icon.png" type="image/png">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="light-theme">
+    <header class="header" id="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="logo">
+                    <span class="logo-text">KS Visual</span>
+                </a>
+                
+                <ul class="nav-menu" id="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="gallery.html" class="nav-link active">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+                
+                <div class="nav-actions">
+                    <button class="favorites-toggle" id="favorites-toggle" aria-label="View favorites">
+                        <i class="far fa-heart"></i>
+                        <span class="favorites-count" id="favorites-count">0</span>
+                    </button>
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header section-padding">
+        <div class="container">
+            <div class="page-header-content">
+                <h1 class="page-title">Photo Gallery</h1>
+                <p class="page-subtitle">Explore my collection of landscapes, wildlife, travel, and street photography</p>
+                <p class="click-hint"><i class="fas fa-mouse-pointer"></i> Click on any image to view larger</p>
+                <nav class="breadcrumb">
+                    <a href="index.html">Home</a>
+                    <span class="breadcrumb-separator">/</span>
+                    <span class="breadcrumb-current">Gallery</span>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery-controls section-padding">
+        <div class="container">
+            <div class="gallery-controls-content">
+                <div class="search-container">
+                    <div class="search-box">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" id="search-input" class="search-input" placeholder="Search by tags, titles, or locations...">
+                        <button class="search-clear" id="search-clear" aria-label="Clear search">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="search-suggestions" id="search-suggestions"></div>
+                </div>
+                
+                <div class="filter-container">
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-filter="all">All Photos</button>
+                        <button class="filter-btn" data-filter="landscapes">Landscapes</button>
+                        <button class="filter-btn" data-filter="wildlife">Wildlife</button>
+                        <button class="filter-btn" data-filter="travel">Travel</button>
+                        <button class="filter-btn" data-filter="street">Street</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="active-filters" id="active-filters">
+                <span class="active-filters-label">Active filters:</span>
+                <div class="active-filter-tags" id="active-filter-tags"></div>
+                <button class="clear-filters" id="clear-filters">Clear All</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery-main section-padding">
+        <div class="container">
+            <div class="gallery-stats" id="gallery-stats">
+                <span class="images-count">Showing <span id="visible-count">0</span> of <span id="total-count">0</span> images</span>
+            </div>
+            
+            <div class="gallery-container">
+                <div class="gallery-grid masonry-view" id="gallery-grid"></div>
+                
+                <div class="empty-state" id="empty-state" style="display: none;">
+                    <i class="fas fa-search empty-icon"></i>
+                    <h3 class="empty-title">No images found</h3>
+                    <p class="empty-description">Try adjusting your search or filters to see more results.</p>
+                    <button class="btn btn-primary" id="reset-filters">Reset Filters</button>
+                </div>
+                
+                <div class="loading-state" id="loading-state">
+                    <div class="skeleton-grid"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="favorites-sidebar" id="favorites-sidebar">
+        <div class="favorites-header">
+            <h3 class="favorites-title">Favorites</h3>
+            <button class="favorites-close" id="favorites-close" aria-label="Close favorites">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="favorites-content">
+            <div class="favorites-empty" id="favorites-empty">
+                <i class="far fa-heart empty-icon"></i>
+                <p>No favorite images yet</p>
+                <p class="empty-hint">Click the heart icon on images to add them to favorites</p>
+            </div>
+            <div class="favorites-grid" id="favorites-grid"></div>
+        </div>
+    </div>
+    <div class="favorites-overlay" id="favorites-overlay"></div>
+
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-container">
+            <button class="lightbox-close" id="lightbox-close" aria-label="Close lightbox">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous image">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            
+            <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next image">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            
+            <div class="lightbox-content">
+                <div class="lightbox-image-container">
+                    <img class="lightbox-image" id="lightbox-image" src="" alt="">
+                    <div class="lightbox-loader">
+                        <div class="spinner"></div>
+                    </div>
+                </div>
+                
+                <div class="lightbox-info">
+                    <div class="lightbox-header">
+                        <h3 class="lightbox-title" id="lightbox-title"></h3>
+                    </div>
+                    
+                    <div class="lightbox-meta">
+                        <div class="meta-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span id="lightbox-location"></span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-calendar"></i>
+                            <span id="lightbox-date"></span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-camera"></i>
+                            <span id="lightbox-camera"></span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-cog"></i>
+                            <span id="lightbox-settings"></span>
+                        </div>
+                    </div>
+                    
+                    <p class="lightbox-caption" id="lightbox-caption"></p>
+                    
+                    <div class="lightbox-tags" id="lightbox-tags"></div>
+                </div>
+            </div>
+            
+            <div class="lightbox-actions">
+                <button class="lightbox-action" id="lightbox-download" aria-label="Download image">
+                    <i class="fas fa-download"></i>
+                </button>
+                <button class="lightbox-action" id="lightbox-share" aria-label="Share image">
+                    <i class="fas fa-share"></i>
+                </button>
+                
+                <button class="lightbox-action" id="lightbox-fullscreen" aria-label="Toggle fullscreen">
+                    <i class="fas fa-expand"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">KS Visual</h3>
+                    <p class="footer-description">
+                        Capturing moments that tell stories and evoke emotions through professional photography.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://x.com/KsTiana1" class="social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="404.html" class="social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://m.facebook.com/profile.php?id=61582375997402" class="social-link" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="404.html" class="social-link" aria-label="Pinterest">
+                            <i class="fab fa-pinterest"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="gallery.html?category=landscapes">Landscapes</a></li>
+                        <li><a href="gallery.html?category=wildlife">Wildlife</a></li>
+                        <li><a href="gallery.html?category=travel">Travel</a></li>
+                        <li><a href="gallery.html?category=street">Street</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Contact Info</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-envelope"></i> <a href="mailto:kstiana1@gmail.com">kstiana1@gmail.com</a></p>
+                        <p><i class="fas fa-phone"></i> <a href="tel:+2348164845541">+234 816 484 5541</a></p>
+                        <p><i class="fas fa-map-marker-alt"></i> Nigeria</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 KS Visual. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <div class="toast" id="toast"></div>
+
+    <script src="js/modules/utils/_debounce.js"></script>
+    <script src="js/modules/utils/_storage.js"></script>
+    <script src="js/modules/utils/_errorHandler.js"></script>
+    <script src="js/modules/utils/_lazyLoad.js"></script>
+    <script src="js/modules/ui/_darkMode.js"></script>
+    <script src="js/modules/ui/_mobileMenu.js"></script>
+    <script src="js/modules/ui/_backToTop.js"></script>
+    <script src="js/modules/ui/_scrollAnimations.js"></script>
+    <script src="js/modules/ui/_parallax.js"></script>
+    <script src="js/modules/gallery/_filter.js"></script>
+    <script src="js/modules/gallery/_search.js"></script>
+    <script src="js/modules/gallery/_favorites.js"></script>
+    <script src="js/modules/gallery/_lightbox.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | KS Visual Photography</title>
+    <meta name="description" content="Get in touch for photography services, prints, workshops, and collaborations">
+    
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="assets/icon.png" type="image/png">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="light-theme">
+    <header class="header" id="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="logo">
+                    <span class="logo-text">KS Visual</span>
+                </a>
+                
+                <ul class="nav-menu" id="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="gallery.html" class="nav-link">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link active">Contact</a>
+                    </li>
+                </ul>
+                
+                <div class="nav-actions">
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header section-padding">
+        <div class="container">
+            <div class="page-header-content">
+                <h1 class="page-title">Contact Me</h1>
+                <p class="page-subtitle">Let's discuss your photography needs or collaborate on your next project</p>
+                <nav class="breadcrumb">
+                    <a href="index.html">Home</a>
+                    <span class="breadcrumb-separator">/</span>
+                    <span class="breadcrumb-current">Contact</span>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section section-padding">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2 class="contact-title">Get In Touch</h2>
+                    <p class="contact-description">
+                        I'm always excited to hear about new projects, collaborations, or simply connect with fellow photography enthusiasts. 
+                        Feel free to reach out using any of the methods below.
+                    </p>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Email</h3>
+                                <p>kstiana1@gmail.com</p>
+                                <small>Response within 24 hours</small>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Phone</h3>
+                                <p>+234 816 484 5541</p>
+                                <small>Mon–Fri, 9AM–6PM EST</small>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Location</h3>
+                                <p>Anambra, Nigeria</p>
+                                <small>Available for travel worldwide</small>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Office Hours</h3>
+                                <p>Monday–Friday: 9:00 AM – 6:00 PM</p>
+                                <small>Weekends: By appointment</small>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-contact">
+                        <h3>Follow My Work</h3>
+                        <div class="social-links">
+                            <a href="https://x.com/KsTiana1" class="social-link" aria-label="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="404.html" class="social-link" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://m.facebook.com/profile.php?id=61582375997402" class="social-link" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="404.html" class="social-link" aria-label="Pinterest">
+                                <i class="fab fa-pinterest"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form-container">
+                    <form id="contact-form" class="form" netlify name="contact">
+                        <input type="hidden" name="form-name" value="contact">
+                        
+                        <div class="form-group">
+                            <label for="name" class="form-label">Name *</label>
+                            <input type="text" id="name" name="name" class="form-input" required>
+                            <span class="form-error" id="name-error"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email Address *</label>
+                            <input type="email" id="email" name="email" class="form-input" required>
+                            <span class="form-error" id="email-error"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject" class="form-label">Subject *</label>
+                            <select id="subject" name="subject" class="form-select" required>
+                                <option value="">Select a subject</option>
+                                <option value="photoshoot">Photoshoot Inquiry</option>
+                                <option value="prints">Print Purchase</option>
+                                <option value="licensing">Photo Licensing</option>
+                                <option value="workshop">Workshop Inquiry</option>
+                                <option value="collaboration">Collaboration</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <span class="form-error" id="subject-error"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message *</label>
+                            <textarea id="message" name="message" class="form-textarea" rows="6" required></textarea>
+                            <span class="form-error" id="message-error"></span>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-full" id="submit-btn">
+                            <span>Send Message</span>
+                            <div class="btn-spinner" id="submit-spinner">
+                                <i class="fas fa-spinner fa-spin"></i>
+                            </div>
+                        </button>
+                        
+                        <div class="form-message" id="form-message"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-subtitle">Quick answers to common questions</p>
+            </div>
+            
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3 class="faq-question">Do you travel for photoshoots?</h3>
+                    <p class="faq-answer">
+                        Yes, I'm available for travel worldwide. Travel expenses are quoted based on location and project requirements.
+                    </p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3 class="faq-question">What's your typical response time?</h3>
+                    <p class="faq-answer">
+                        I respond to all inquiries within 24 hours during business days. For urgent matters, please call directly.
+                    </p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3 class="faq-question">Do you offer prints of your photos?</h3>
+                    <p class="faq-answer">
+                        Yes, high-quality prints are available in various sizes. Contact me for pricing and options.
+                    </p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3 class="faq-question">Can I license your photos for commercial use?</h3>
+                    <p class="faq-answer">
+                        Absolutely! I offer licensing options for commercial use. Please specify your needs in the contact form.
+                    </p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3 class="faq-question">Do you conduct photography workshops?</h3>
+                    <p class="faq-answer">
+                        Yes, I offer both individual and group workshops. Select "Workshop Inquiry" in the contact form for details.
+                    </p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3 class="faq-question">What's your cancellation policy?</h3>
+                    <p class="faq-answer">
+                        Cancellations made 48+ hours in advance receive a full refund. Within 48 hours, a 50% refund applies.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">KS Visual</h3>
+                    <p class="footer-description">
+                        Capturing moments that tell stories and evoke emotions through professional photography.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://x.com/KsTiana1" class="social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="404.html" class="social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://m.facebook.com/profile.php?id=61582375997402" class="social-link" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="404.html" class="social-link" aria-label="Pinterest">
+                            <i class="fab fa-pinterest"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="gallery.html?category=landscapes">Landscapes</a></li>
+                        <li><a href="gallery.html?category=wildlife">Wildlife</a></li>
+                        <li><a href="gallery.html?category=travel">Travel</a></li>
+                        <li><a href="gallery.html?category=street">Street</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Contact Info</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-envelope"></i> <a href="mailto:kstiana1@gmail.com">kstiana1@gmail.com</a></p>
+                        <p><i class="fas fa-phone"></i> <a href="tel:+2348164845541">+234 816 484 5541</a></p>
+                        <p><i class="fas fa-map-marker-alt"></i> Nigeria</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 KS Visual. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <div class="toast" id="toast"></div>
+
+    <script src="js/modules/utils/_debounce.js"></script>
+    <script src="js/modules/utils/_storage.js"></script>
+    <script src="js/modules/utils/_errorHandler.js"></script>
+    <script src="js/modules/utils/_lazyLoad.js"></script>
+    <script src="js/modules/ui/_darkMode.js"></script>
+    <script src="js/modules/ui/_mobileMenu.js"></script>
+    <script src="js/modules/ui/_backToTop.js"></script>
+    <script src="js/modules/ui/_scrollAnimations.js"></script>
+    <script src="js/modules/ui/_parallax.js"></script>
+    <script src="js/modules/form/_contactForm.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
